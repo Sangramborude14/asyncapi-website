@@ -52,6 +52,10 @@ function generateEditLink(post: IPost) {
   const isHrefToFile = lastListElement.length > 1;
   const EditPage = 'Edit this page on GitHub';
 
+  if (target?.value === 'reference/bindings/') {
+   last = last.replace(/\.md$/, '').replace(/^index$/, '');
+  }
+
   if (target?.value === '') {
     return (
       <a
